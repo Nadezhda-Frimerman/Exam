@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro_sky_exam.model.Question;
 import pro_sky_exam.service.ExaminerService;
-import pro_sky_exam.service.ExaminerServiceImpl;
-import pro_sky_exam.service.QuestionService;
 
 import java.util.Collection;
 
@@ -19,11 +17,10 @@ public class ExamController {
     public ExamController(ExaminerService examinerService) {
         this.examinerService = examinerService;
     }
-    @GetMapping("/get?amount=amount")
+    @GetMapping("/get")
     public Collection<Question> getQuestions(@RequestParam int amount) {
             return examinerService.getQuestions(amount);
-        }
-
+    }
 
 
 }

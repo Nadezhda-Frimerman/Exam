@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro_sky_exam.model.Question;
 import pro_sky_exam.service.JavaQuestionService;
-
+import java.lang.String;
 import java.util.Collection;
 
 @RestController
@@ -17,19 +17,19 @@ public class JavaQuestionController {
         this.javaQuestionService = javaQuestionService;
 
     }
-    @GetMapping("/add?question=QuestionText&answer=QuestionAnswer")
-    public Question add (@RequestParam(value = "QuestionText") String questionText,
-                         @RequestParam(value = "QuestionAnswer") String answer){
-            return javaQuestionService.add (questionText,answer);
+    @GetMapping("/add")
+    public String add (@RequestParam(value = "questionText") String questionText,
+                         @RequestParam(value = "answer") String answer){
+                   return javaQuestionService.add(questionText,answer).toString();
     }
     @GetMapping()
-    public Collection<Question> getAll(){
-        return javaQuestionService.getAll();
+    public String getAll(){
+        return javaQuestionService.getAll().toString();
     }
-    @GetMapping("/remove?question=QuestionText&answer=QuestionAnswer")
-    public Question remove (@RequestParam(value = "QuestionTex") String questionText,
-                @RequestParam(value = "QuestionAnswer") String answer){
-            return javaQuestionService.remove(new Question(questionText, answer));
+    @GetMapping("/remove")
+    public String remove (@RequestParam(value = "questionText") String questionText,
+                @RequestParam(value = "answer") String answer){
+            return javaQuestionService.remove(questionText, answer).toString();
         }
 
 }

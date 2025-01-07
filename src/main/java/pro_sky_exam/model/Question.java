@@ -1,5 +1,5 @@
 package pro_sky_exam.model;
-
+import java.lang.String;
 import java.util.Objects;
 
 public class Question {
@@ -16,6 +16,9 @@ public class Question {
     public String getQuestion() {
         return questionText;
     }
+    public String getAnswer() {
+        return answer;
+    }
     public int hashCode() {
         return Objects.hash(questionText,answer);
     }
@@ -23,9 +26,9 @@ public class Question {
         if (this == a) return true;
         if (a == null || getClass() != a.getClass()) return false;
         Question question = (Question) a;
-        return Objects.equals(this.questionText, ((Question) a).questionText) &&
-                Objects.equals(this.answer, ((Question) a).answer);
+        return Objects.equals(this.questionText, ((Question) a).questionText);
     }
+
     public String toString() {
         return "Question "+ questionText + " Answer " + answer;
     }
