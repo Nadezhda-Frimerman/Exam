@@ -5,10 +5,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class QuestionNotFoundException extends RuntimeException {
-    public QuestionNotFoundException(String message){
+    public QuestionNotFoundException(String message) {
         super(message);
     }
-    public QuestionNotFoundException(){
+
+    public QuestionNotFoundException() {
 
     }
 }

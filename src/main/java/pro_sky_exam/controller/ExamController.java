@@ -17,9 +17,10 @@ public class ExamController {
     public ExamController(ExaminerService examinerService) {
         this.examinerService = examinerService;
     }
+
     @GetMapping("/get")
     public Collection<Question> getQuestions(@RequestParam int amount) {
-            return examinerService.getQuestions(amount);
+        return examinerService.getQuestions(amount);
     }
 
 

@@ -7,5 +7,5 @@ import java.util.Collection;
 
 @Service
 public interface ExaminerService {
-    Collection <Question> getQuestions(int amount);
+    Collection<Question> getQuestions(int amount);
 }

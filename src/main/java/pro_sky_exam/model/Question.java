@@ -1,4 +1,5 @@
 package pro_sky_exam.model;
+
 import java.lang.String;
 import java.util.Objects;
 
@@ -16,12 +17,15 @@ public class Question {
     public String getQuestion() {
         return questionText;
     }
+
     public String getAnswer() {
         return answer;
     }
+
     public int hashCode() {
-        return Objects.hash(questionText,answer);
+        return Objects.hash(questionText, answer);
     }
+
     public boolean equals(Object a) {
         if (this == a) return true;
         if (a == null || getClass() != a.getClass()) return false;
@@ -30,7 +34,7 @@ public class Question {
     }
 
     public String toString() {
-        return "Question "+ questionText + " Answer " + answer;
+        return "Question " + questionText + " Answer " + answer;
     }
 
 }
